@@ -24,7 +24,8 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden py-20 sm:py-24">
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#7c3aed]/35 to-[#06b6d4]/25 blur-3xl" />
+      <div className="pointer-events-none absolute -top-20 right-0 h-96 w-96 rounded-full bg-[#7c3aed]/25 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 left-0 h-80 w-80 rounded-full bg-[#4f46e5]/15 blur-3xl" />
 
       <motion.div
         className="section-shell relative"
@@ -40,7 +41,7 @@ export default function Hero() {
             hidden: { opacity: 0, y: 24 },
             show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
-          className="mb-4 text-sm uppercase tracking-[0.22em] text-white/60"
+          className="mb-4 text-[0.7rem] uppercase tracking-[0.2em] text-[#a78bfa]"
         >
           Crafting Digital Experiences
         </motion.p>
@@ -49,7 +50,7 @@ export default function Hero() {
             hidden: { opacity: 0, y: 24 },
             show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
           }}
-          className="max-w-4xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
+          className="max-w-4xl text-4xl font-semibold leading-tight text-[#f8f8f8] sm:text-5xl lg:text-6xl"
         >
           Hi, I&apos;m Akanxa Acharya
         </motion.h1>
@@ -68,7 +69,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35 }}
-              className="inline-block bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] bg-clip-text text-xl font-medium text-transparent sm:text-2xl"
+              className="inline-block text-xl font-medium text-[#a78bfa] sm:text-2xl"
             >
               {roles[roleIndex]}
             </motion.p>
@@ -80,7 +81,7 @@ export default function Hero() {
             hidden: { opacity: 0, y: 24 },
             show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
           }}
-          className="mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg"
+          className="mt-5 max-w-2xl text-base leading-7 text-[rgba(248,248,248,0.55)] sm:text-lg"
         >
           I build beautiful, fast, and scalable web experiences that help
           businesses grow.
@@ -95,14 +96,14 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="btn-primary inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-[#f8f8f8] hover:-translate-y-0.5"
           >
             View My Work
             <ArrowRight size={16} />
           </a>
           <a
             href="/resume.pdf"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#7c3aed] hover:text-[#d8b4fe]"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/[0.06] px-6 py-3 text-sm font-semibold text-[#f8f8f8] transition hover:border-violet-500/40 hover:text-[#a78bfa]"
           >
             Download Resume
             <Download size={16} />

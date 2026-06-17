@@ -14,13 +14,13 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="grid gap-8 rounded-2xl border border-white/10 bg-[#111111] p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr]"
+          className="card-surface grid gap-8 rounded-2xl p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr]"
         >
           <div>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+            <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">
               Let&apos;s Work Together
             </h2>
-            <p className="mt-3 text-white/70">
+            <p className="mt-3 text-[rgba(248,248,248,0.55)]">
               Available for freelance projects and full-time roles
             </p>
 
@@ -28,32 +28,34 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full rounded-lg border border-white/15 bg-black/35 px-4 py-3 text-sm text-white outline-none transition focus:border-[#7c3aed]"
+                className="w-full rounded-lg border border-white/[0.06] bg-[#080808]/60 px-4 py-3 text-sm text-[#f8f8f8] outline-none transition focus:border-violet-500/60 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)]"
               />
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full rounded-lg border border-white/15 bg-black/35 px-4 py-3 text-sm text-white outline-none transition focus:border-[#7c3aed]"
+                className="w-full rounded-lg border border-white/[0.06] bg-[#080808]/60 px-4 py-3 text-sm text-[#f8f8f8] outline-none transition focus:border-violet-500/60 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)]"
               />
               <textarea
                 placeholder="Message"
                 rows={5}
-                className="w-full resize-none rounded-lg border border-white/15 bg-black/35 px-4 py-3 text-sm text-white outline-none transition focus:border-[#7c3aed]"
+                className="w-full resize-none rounded-lg border border-white/[0.06] bg-[#080808]/60 px-4 py-3 text-sm text-[#f8f8f8] outline-none transition focus:border-violet-500/60 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)]"
               />
               <button
                 type="button"
-                className="inline-flex items-center rounded-lg bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+                className="btn-primary inline-flex items-center rounded-lg px-5 py-3 text-sm font-semibold text-[#f8f8f8] hover:-translate-y-0.5"
               >
                 Send Message
               </button>
             </form>
           </div>
 
-          <div className="rounded-xl border border-white/10 bg-black/25 p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-white/50">Contact</p>
+          <div className="rounded-xl border border-white/[0.06] bg-[#080808]/40 p-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-[rgba(248,248,248,0.35)]">
+              Contact
+            </p>
             <a
               href={`mailto:${profileLinks.email}`}
-              className="mt-4 block text-white transition hover:text-[#d8b4fe]"
+              className="mt-4 block text-[#f8f8f8] transition hover:text-[#a78bfa]"
             >
               {profileLinks.email}
             </a>
@@ -63,7 +65,7 @@ export default function Contact() {
                 href={profileLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-[#111] border border-white/10 hover:border-violet-500 hover:text-violet-400 transition-all duration-300"
+                className="rounded-full border border-white/[0.06] bg-[#0f0f0f] p-3 transition-all duration-300 hover:border-violet-500/40 hover:bg-violet-500/10 hover:text-violet-400"
                 aria-label="LinkedIn profile"
               >
                 <FaLinkedin size={22} />
@@ -72,14 +74,14 @@ export default function Contact() {
                 href={profileLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-[#111] border border-white/10 hover:border-violet-500 hover:text-violet-400 transition-all duration-300"
+                className="rounded-full border border-white/[0.06] bg-[#0f0f0f] p-3 transition-all duration-300 hover:border-violet-500/40 hover:bg-violet-500/10 hover:text-violet-400"
                 aria-label="GitHub profile"
               >
                 <FaGithub size={22} />
               </a>
               <a
                 href={`mailto:${profileLinks.email}`}
-                className="p-3 rounded-full bg-[#111] border border-white/10 hover:border-violet-500 hover:text-violet-400 transition-all duration-300"
+                className="rounded-full border border-white/[0.06] bg-[#0f0f0f] p-3 transition-all duration-300 hover:border-violet-500/40 hover:bg-violet-500/10 hover:text-violet-400"
                 aria-label="Email contact"
               >
                 <MdEmail size={22} />

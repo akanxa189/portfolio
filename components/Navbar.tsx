@@ -19,11 +19,11 @@ export default function Navbar() {
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="sticky top-0 z-50 border-b border-white/10 bg-black/45 backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b border-white/5 bg-[#080808]/80 backdrop-blur-xl"
     >
       <nav className="section-shell flex h-18 items-center justify-between">
         <a href="#top" className="group inline-flex items-center gap-3">
-          <span className="rounded-lg bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] px-3 py-1.5 text-lg font-bold text-white shadow-[0_0_24px_rgba(124,58,237,0.45)]">
+          <span className="rounded-lg bg-gradient-to-r from-[#7c3aed] to-[#6366f1] px-3 py-1.5 text-lg font-bold text-[#f8f8f8] shadow-[0_0_24px_rgba(124,58,237,0.35)]">
             AA
           </span>
         </a>
@@ -33,7 +33,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-white/80 transition hover:text-white"
+                className="text-sm text-[rgba(248,248,248,0.55)] transition hover:text-violet-400 hover:underline hover:decoration-violet-500 hover:underline-offset-4"
               >
                 {link.label}
               </a>
@@ -44,7 +44,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="inline-flex rounded-md border border-white/15 p-2 text-white md:hidden"
+          className="inline-flex rounded-md border border-white/[0.06] p-2 text-[#f8f8f8] md:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >
@@ -58,14 +58,14 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="border-t border-white/10 bg-[#0a0a0a] md:hidden"
+            className="border-t border-white/5 bg-[#080808] md:hidden"
           >
             <ul className="section-shell flex flex-col py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="block py-3 text-sm text-white/80 transition hover:text-white"
+                    className="block py-3 text-sm text-[rgba(248,248,248,0.55)] transition hover:text-violet-400"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}

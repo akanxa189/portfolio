@@ -37,8 +37,8 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-3xl font-semibold text-white sm:text-4xl">Projects</h2>
-          <div className="mt-3 h-1 w-28 rounded bg-gradient-to-r from-[#7c3aed] to-[#06b6d4]" />
+          <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">Projects</h2>
+          <div className="accent-underline mt-3 h-1 w-28 rounded" />
         </motion.div>
 
         <motion.div
@@ -58,17 +58,17 @@ export default function Projects() {
                 hidden: { opacity: 0, y: 24 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
               }}
-              className="group rounded-2xl border border-white/10 bg-[#111111] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#7c3aed]/65 hover:shadow-[0_18px_40px_rgba(124,58,237,0.18)]"
+              className="card-surface group rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:bg-[#141414]"
             >
-              <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-              <p className="mt-3 min-h-12 text-sm leading-6 text-white/70">
+              <h3 className="text-xl font-semibold text-[#f8f8f8]">{project.title}</h3>
+              <p className="mt-3 min-h-12 text-sm leading-6 text-[rgba(248,248,248,0.55)]">
                 {project.description}
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.tech.map((techItem) => (
                   <span
                     key={techItem}
-                    className="rounded-full border border-[#7c3aed]/45 bg-[#7c3aed]/15 px-3 py-1 text-xs text-[#d8b4fe]"
+                    className="rounded-full border border-violet-500/25 bg-violet-500/10 px-3 py-1 text-xs text-[#a78bfa]"
                   >
                     {techItem}
                   </span>
@@ -80,7 +80,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${project.title} source code`}
-                  className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-violet-400"
+                  className="flex items-center gap-2 text-sm text-[rgba(248,248,248,0.55)] transition-colors hover:text-violet-400"
                 >
                   <FiCode size={16} />
                   GitHub
@@ -89,7 +89,7 @@ export default function Projects() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-violet-400"
+                  className="flex items-center gap-2 text-sm text-[rgba(248,248,248,0.55)] transition-colors hover:text-violet-400"
                 >
                   <FiExternalLink size={16} />
                   Live Demo

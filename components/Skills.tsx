@@ -71,10 +71,10 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+          <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">
             Skills &amp; Technologies
           </h2>
-          <div className="mt-3 h-1 w-48 rounded bg-linear-to-r from-[#7c3aed] to-[#06b6d4]" />
+          <div className="accent-underline mt-3 h-1 w-48 rounded" />
         </motion.div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
@@ -85,9 +85,9 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: groupIndex * 0.08 }}
-              className="rounded-2xl border border-white/10 bg-[#111111] p-6"
+              className="card-surface rounded-2xl p-6"
             >
-              <h3 className="text-xl font-semibold text-white">{group.title}</h3>
+              <h3 className="text-xl font-semibold text-[#f8f8f8]">{group.title}</h3>
               <motion.div
                 initial="hidden"
                 whileInView="show"
@@ -107,13 +107,16 @@ export default function Skills() {
                     }}
                     whileHover={{
                       scale: 1.05,
-                      borderColor: skill.color,
-                      boxShadow: `0 0 20px ${skill.color}22`,
+                      boxShadow: "0 0 30px rgba(139, 92, 246, 0.1)",
                     }}
-                    className="flex cursor-default flex-col items-center gap-2 rounded-xl border border-white/5 bg-[#111] p-4 transition-all hover:border-violet-500/50"
+                    className="group flex cursor-default flex-col items-center gap-2 rounded-xl border border-white/[0.06] bg-[#0f0f0f] p-4 text-white/60 transition-all hover:border-violet-500/40 hover:text-[#f8f8f8]"
                   >
-                    <skill.Icon size={28} color={skill.color} />
-                    <span className="text-center text-xs font-medium text-white/70">
+                    <skill.Icon
+                      size={28}
+                      color={skill.color}
+                      className="opacity-75 transition-all group-hover:opacity-100 group-hover:brightness-125"
+                    />
+                    <span className="text-center text-xs font-medium transition-colors group-hover:text-[#f8f8f8]">
                       {skill.name}
                     </span>
                   </motion.div>

@@ -7,6 +7,7 @@ const experienceItems = [
     role: "Software Engineer",
     company: "Surevorx Software India PVT LTD. · Surat, India (Remote)",
     duration: "Jul 2024 - Present",
+    isCurrent: true,
     summary:
       "Architected and scaled frontend and backend systems for a SaaS construction platform, focusing on performance, reliability, and real-time collaboration.",
     highlights: [
@@ -30,6 +31,7 @@ const experienceItems = [
     role: "Web Developer -> Tech Lead",
     company: "Green Apex Technolabs · Ahmedabad, India",
     duration: "Aug 2021 - Jul 2024 · 3 years",
+    isCurrent: false,
     summary:
       "Led product delivery and engineering quality across high-traffic MERN applications, scaling from individual contributor to team leadership.",
     highlights: [
@@ -62,16 +64,16 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-3xl font-semibold text-white sm:text-4xl">Experience</h2>
-          <div className="mt-3 h-1 w-28 rounded bg-linear-to-r from-[#7c3aed] to-[#06b6d4]" />
-          <p className="mt-4 max-w-2xl text-white/70">
+          <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">Experience</h2>
+          <div className="accent-underline mt-3 h-1 w-28 rounded" />
+          <p className="mt-4 max-w-2xl text-[rgba(248,248,248,0.55)]">
             Professional experience delivering production-grade products, leading
             teams, and scaling engineering quality across modern web stacks.
           </p>
         </motion.div>
 
         <div className="relative mt-10 pl-8 sm:pl-12">
-          <div className="absolute bottom-0 left-3 top-0 w-px bg-linear-to-b from-[#7c3aed]/80 via-white/20 to-[#06b6d4]/80 sm:left-4" />
+          <div className="absolute bottom-0 left-3 top-0 w-px bg-gradient-to-b from-[#7c3aed] to-[#6366f1] sm:left-4" />
 
           {experienceItems.map((item, index) => (
             <motion.article
@@ -80,19 +82,28 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.45, delay: index * 0.12 }}
-              className="relative mb-6 rounded-2xl border border-white/10 bg-[#111111] p-6 transition duration-300 last:mb-0 hover:-translate-y-1 hover:border-[#7c3aed]/50 hover:shadow-[0_18px_40px_rgba(124,58,237,0.16)]"
+              className="card-surface relative mb-6 rounded-2xl p-6 transition duration-300 last:mb-0 hover:-translate-y-1 hover:bg-[#141414]"
             >
-              <span className="absolute -left-[2.2rem] top-8 h-4 w-4 rounded-full border border-[#7c3aed]/70 bg-[#0a0a0a] shadow-[0_0_20px_rgba(124,58,237,0.55)] sm:-left-[2.65rem]" />
-              <p className="text-xs uppercase tracking-[0.18em] text-[#c4b5fd]">
-                {item.duration}
+              <span className="absolute -left-[2.2rem] top-8 h-4 w-4 rounded-full bg-violet-600 ring-4 ring-violet-500/30 sm:-left-[2.65rem]" />
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#a78bfa]">
+                  {item.duration}
+                </p>
+                {item.isCurrent && (
+                  <span className="rounded-full border border-violet-500/20 bg-violet-500/10 px-2.5 py-0.5 text-xs font-medium text-violet-300">
+                    Current
+                  </span>
+                )}
+              </div>
+              <h3 className="mt-2 text-2xl font-semibold text-[#f8f8f8]">{item.role}</h3>
+              <p className="mt-1 bg-gradient-to-r from-[#a78bfa] to-[#818cf8] bg-clip-text text-sm text-transparent">
+                {item.company}
               </p>
-              <h3 className="mt-2 text-2xl font-semibold text-white">{item.role}</h3>
-              <p className="mt-1 text-sm text-white/65">{item.company}</p>
-              <p className="mt-4 leading-7 text-white/75">{item.summary}</p>
+              <p className="mt-4 leading-7 text-[rgba(248,248,248,0.55)]">{item.summary}</p>
 
               <ul className="mt-4 space-y-2">
                 {item.highlights.map((point) => (
-                  <li key={point} className="text-sm text-white/70">
+                  <li key={point} className="text-sm text-[rgba(248,248,248,0.55)]">
                     • {point}
                   </li>
                 ))}
@@ -102,7 +113,7 @@ export default function Experience() {
                 {item.stack.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/75"
+                    className="rounded-full border border-white/[0.06] bg-[#0f0f0f] px-3 py-1 text-xs text-[rgba(248,248,248,0.55)]"
                   >
                     {tag}
                   </span>

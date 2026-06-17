@@ -42,8 +42,8 @@ export default function About() {
           className="grid gap-10 lg:grid-cols-2 lg:gap-16"
         >
           <div>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">About Me</h2>
-            <p className="mt-6 text-base leading-8 text-white/75">
+            <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">About Me</h2>
+            <p className="mt-6 text-base leading-8 text-[rgba(248,248,248,0.55)]">
               I&apos;m a passionate full-stack developer with a keen eye for design.
               I specialize in building modern web applications using React, Next.js,
               and Node.js. I love turning complex problems into simple, beautiful
@@ -59,12 +59,12 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: index * 0.12 }}
-                  className="rounded-xl border border-white/10 bg-[#111111] p-4"
+                  className="card-surface rounded-xl p-4 hover:bg-[#141414]"
                 >
-                  <p className="text-2xl font-semibold text-white">
+                  <p className="text-2xl font-semibold text-[#f8f8f8]">
                     <CountUp value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="mt-1 text-sm text-white/65">{stat.label}</p>
+                  <p className="mt-1 text-sm text-[rgba(248,248,248,0.55)]">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -75,17 +75,17 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative rounded-2xl border border-white/10 bg-[#111111] p-8"
+            className="card-surface relative rounded-2xl p-8 hover:bg-[#141414]"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#7c3aed]/15 via-transparent to-[#06b6d4]/15" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#7c3aed]/15 via-[#a855f7]/5 to-[#6366f1]/15" />
             <div className="relative">
-              <p className="text-xs uppercase tracking-[0.2em] text-white/50">
+              <p className="text-xs uppercase tracking-[0.2em] text-[rgba(248,248,248,0.35)]">
                 Development Philosophy
               </p>
-              <h3 className="mt-4 text-2xl font-semibold text-white">
+              <h3 className="mt-4 text-2xl font-semibold text-[#f8f8f8]">
                 Clean code, sharp design, measurable results
               </h3>
-              <p className="mt-4 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-[rgba(248,248,248,0.55)]">
                 I approach every build with a product mindset: optimize performance,
                 preserve usability, and create experiences that users remember.
               </p>
