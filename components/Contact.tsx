@@ -4,8 +4,38 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { profileLinks } from "./siteData";
+import { useState } from "react";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="contact" className="py-16 sm:py-24">
       <div className="section-shell">
@@ -24,28 +54,50 @@ export default function Contact() {
               Available for freelance projects and full-time roles
             </p>
 
-            <form className="mt-8 space-y-4">
+            <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
                 className="w-full rounded-lg border border-white/[0.06] bg-[#080808]/60 px-4 py-3 text-sm text-[#f8f8f8] outline-none transition focus:border-violet-500/60 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)]"
               />
               <input
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 className="w-full rounded-lg border border-white/[0.06] bg-[#080808]/60 px-4 py-3 text-sm text-[#f8f8f8] outline-none transition focus:border-violet-500/60 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)]"
               />
               <textarea
                 placeholder="Message"
                 rows={5}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
                 className="w-full resize-none rounded-lg border border-white/[0.06] bg-[#080808]/60 px-4 py-3 text-sm text-[#f8f8f8] outline-none transition focus:border-violet-500/60 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)]"
               />
+
               <button
-                type="button"
-                className="btn-primary inline-flex items-center rounded-lg px-5 py-3 text-sm font-semibold text-[#f8f8f8] hover:-translate-y-0.5"
+                type="submit"
+                disabled={status === "sending"}
+                className="btn-primary inline-flex items-center rounded-lg px-5 py-3 text-sm font-semibold text-[#f8f8f8] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
               </button>
+
+              {status === "success" && (
+                <p className="text-sm text-green-400">
+                  ✓ Message sent! I&apos;ll get back to you soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-400">
+                  ✕ Something went wrong. Please try again.
+                </p>
+              )}
             </form>
           </div>
 
