@@ -5,18 +5,36 @@ import { FiCode, FiExternalLink } from "react-icons/fi";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack shopping app with cart, auth, and secure payments.",
-    tech: ["React", "Next.js", "Stripe", "MongoDB"],
-    githubUrl: "https://github.com/akanxa189/ecommerce-platform",
-    liveUrl: "https://ecommerce-platform-demo.vercel.app",
+    title: "AI Code Reviewer",
+    description:
+      "Full-stack web app where users sign in, paste code in a live editor, and get AI-powered feedback on bugs, performance, security, and best practices with review history saved per user.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Groq API",
+    ],
+    githubUrl: "https://github.com/akanxa189/CodeEditor",
+    liveUrl: "https://code-editor-rho-jet.vercel.app/",
   },
   {
-    title: "Task Management App",
-    description: "Drag-and-drop productivity tool with real-time team sync.",
-    tech: ["React", "Firebase", "Tailwind CSS"],
-    githubUrl: "https://github.com/akanxa189/task-management-app",
-    liveUrl: "https://task-management-demo.vercel.app",
+    title: "Bookstagram",
+    description:
+      "Personal reading dashboard for tracking books, yearly reading challenges, daily reading habits, and detailed book notes ratings, thoughts, and favourite quotes.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Clerk",
+    ],
+    githubUrl: "https://github.com/akanxa189/bookstagram",
+    liveUrl: "https://bookstagram-psi.vercel.app/",
   },
   {
     title: "Portfolio Generator",
@@ -37,7 +55,9 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">Projects</h2>
+          <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">
+            Projects
+          </h2>
           <div className="accent-underline mt-3 h-1 w-28 rounded" />
         </motion.div>
 
@@ -60,7 +80,9 @@ export default function Projects() {
               }}
               className="card-surface group rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:bg-[#141414]"
             >
-              <h3 className="text-xl font-semibold text-[#f8f8f8]">{project.title}</h3>
+              <h3 className="text-xl font-semibold text-[#f8f8f8]">
+                {project.title}
+              </h3>
               <p className="mt-3 min-h-12 text-sm leading-6 text-[rgba(248,248,248,0.55)]">
                 {project.description}
               </p>
