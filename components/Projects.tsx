@@ -41,7 +41,7 @@ const projects = [
     description: "No-code portfolio builder tailored for modern developers.",
     tech: ["Next.js", "Prisma", "PostgreSQL"],
     githubUrl: "https://github.com/akanxa189/portfolio-generator",
-    liveUrl: "https://portfolio-generator-demo.vercel.app",
+    liveUrl: "https://v0-resume-builder-ui-jade.vercel.app/",
   },
 ];
 
