@@ -1,6 +1,12 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { useEffect, useRef } from "react";
 
 function CountUp({ value, suffix }: { value: number; suffix: string }) {
@@ -27,7 +33,7 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 const stats = [
   { value: 10, suffix: "+", label: "Projects" },
   { value: 5, suffix: "+", label: "Happy Clients" },
-  { value: 2, suffix: "+", label: "Years Experience" },
+  { value: 5, suffix: "+", label: "Years Experience" },
 ];
 
 export default function About() {
@@ -42,13 +48,15 @@ export default function About() {
           className="grid gap-10 lg:grid-cols-2 lg:gap-16"
         >
           <div>
-            <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">About Me</h2>
+            <h2 className="text-3xl font-semibold text-[#f8f8f8] sm:text-4xl">
+              About Me
+            </h2>
             <p className="mt-6 text-base leading-8 text-[rgba(248,248,248,0.55)]">
-              I&apos;m a passionate full-stack developer with a keen eye for design.
-              I specialize in building modern web applications using React, Next.js,
-              and Node.js. I love turning complex problems into simple, beautiful
-              solutions - whether that&apos;s for a startup, an agency, or a direct
-              client.
+              I&apos;m a passionate full-stack developer with a keen eye for
+              design. I specialize in building modern web applications using
+              React, Next.js, and Node.js. I love turning complex problems into
+              simple, beautiful solutions - whether that&apos;s for a startup,
+              an agency, or a direct client.
             </p>
 
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -64,7 +72,9 @@ export default function About() {
                   <p className="text-2xl font-semibold text-[#f8f8f8]">
                     <CountUp value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="mt-1 text-sm text-[rgba(248,248,248,0.55)]">{stat.label}</p>
+                  <p className="mt-1 text-sm text-[rgba(248,248,248,0.55)]">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -86,8 +96,9 @@ export default function About() {
                 Clean code, sharp design, measurable results
               </h3>
               <p className="mt-4 leading-7 text-[rgba(248,248,248,0.55)]">
-                I approach every build with a product mindset: optimize performance,
-                preserve usability, and create experiences that users remember.
+                I approach every build with a product mindset: optimize
+                performance, preserve usability, and create experiences that
+                users remember.
               </p>
             </div>
           </motion.div>
