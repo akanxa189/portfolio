@@ -12,7 +12,6 @@ const projects = [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Vite",
       "Node.js",
       "Express",
       "MongoDB",
@@ -37,12 +36,27 @@ const projects = [
     liveUrl: "https://bookstagram-psi.vercel.app/",
   },
   {
-    title: "Portfolio Generator",
-    description: "No-code portfolio builder tailored for modern developers.",
-    tech: ["Next.js", "Prisma", "PostgreSQL"],
-    githubUrl: "https://github.com/akanxa189/portfolio-generator",
-    liveUrl: "https://v0-resume-builder-ui-jade.vercel.app/",
+    title: "GitHub Roast",
+    description:
+      "AI-powered GitHub profile roaster that pulls your repos, stars, and commit habits, then generates savage developer roasts with scorecards, roast history and hidden easter eggs.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Groq AI",
+      "GitHub API",
+    ],
+    githubUrl: "https://github.com/akanxa189/gitRoast",
+    liveUrl: "https://git-roast-lyart.vercel.app/",
   },
+  // {
+  //   title: "Portfolio Generator",
+  //   description: "No-code portfolio builder tailored for modern developers.",
+  //   tech: ["Next.js", "Prisma", "PostgreSQL"],
+  //   githubUrl: "https://github.com/akanxa189/portfolio-generator",
+  //   liveUrl: "https://v0-resume-builder-ui-jade.vercel.app/",
+  // },
 ];
 
 export default function Projects() {
